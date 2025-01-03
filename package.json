@@ -1,11 +1,26 @@
 {
-  "name": "wp-peacock",
+  "name": "peacock-seo",
   "version": "1.0.0",
-  "description": "Peacock is a WordPress SEO plugin",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
   },
-  "author": "",
-  "license": "GPL-3.0-only"
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.22.1",
+    "antd": "^4.16.13",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^5.2.0"
+  }
 }

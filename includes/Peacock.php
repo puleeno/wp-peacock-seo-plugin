@@ -19,6 +19,7 @@ final class Peacock
     {
         $this->bootstrap();
         $this->initHooks();
+        add_action('admin_menu', [$this, 'addOptionsPage']);
     }
 
     public static function getInstance()
@@ -47,5 +48,28 @@ final class Peacock
         if (property_exists($this, $name)) {
             return $name;
         }
+    }
+
+    public function addOptionsPage()
+    {
+        add_menu_page(
+            'Peacock SEO Options',
+            'Peacock',
+            'manage_options',
+            'peacock-seo-options',
+            [$this, 'renderOptionsPage'],
+            'dashicons-admin-generic',
+            100
+        );
+    }
+
+    public function renderOptionsPage()
+    {
+        ?>
+        <div class="wrap">
+            <div id="peacock-seo-app"></div>
+        </div>
+        <script src="<?php echo plugins_url('assets/dist/bundle.js', __FILE__); ?>"></script>
+        <?php
     }
 }
