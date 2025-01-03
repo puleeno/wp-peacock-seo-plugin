@@ -36,8 +36,8 @@ final class Peacock
 
     private function initHooks()
     {
-        register_activation_hook(WP_PEACOCK_PLUGIN_FILE, [Install::class, 'active']);
-        register_deactivation_hook(WP_PEACOCK_PLUGIN_FILE, [Install::class, 'deactive']);
+        register_activation_hook(WP_PEACOCK_SEO_PLUGIN_FILE, [Install::class, 'active']);
+        register_deactivation_hook(WP_PEACOCK_SEO_PLUGIN_FILE, [Install::class, 'deactive']);
 
         add_action('plugins_loaded', [$this->moduleManager, 'load'], 15);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Peacock - another WordPress SEO plugin
+ * Plugin Name: Peacock SEO - another WordPress SEO plugin
  * Plugin description: Highlight your site in search results of Search Engines
  * Author: Puleeno nguyen
  * Author URI: https://puleeno.com
@@ -9,7 +9,7 @@
 
 use Peacock\Peacock;
 
-define('WP_PEACOCK_PLUGIN_FILE', __FILE__);
+define('WP_PEACOCK_SEO_PLUGIN_FILE', __FILE__);
 
 class WP_Peacock
 {
