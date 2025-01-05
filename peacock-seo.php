@@ -47,6 +47,7 @@ class Peacock_SEO
 
         // Thêm action để xử lý yêu cầu AJAX
         add_action('wp_ajax_load_peacock_options', [$this, 'loadPeacockOptions']);
+        add_action('wp_ajax_get_seo_score', [$this, 'getSeoScore']);
     }
 
     public function addOptionsPage()
@@ -113,6 +114,21 @@ class Peacock_SEO
 
         // Gửi phản hồi thành công
         wp_send_json_success($options);
+    }
+
+    public function getSeoScore()
+    {
+        // Kiểm tra quyền người dùng
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Unauthorized', 403);
+            return;
+        }
+
+        // Tính toán điểm SEO (ví dụ: 85)
+        $score = 85; // Đây chỉ là một ví dụ, bạn có thể thay đổi logic tính toán
+
+        // Gửi phản hồi thành công
+        wp_send_json_success(['score' => $score]);
     }
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Input, Form } from 'antd';
 import 'antd/dist/antd.css';
+import SeoScore from './SeoScore';
 
 const App = () => {
     const [form] = Form.useForm();
@@ -66,33 +67,21 @@ const App = () => {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Peacock SEO Options</h1>
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <Form form={form} onFinish={onFinish}>
-                    <Form.Item
-                        label="Option 1"
-                        name="option_1"
-                        rules={[{ required: true, message: 'Please input your option 1!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-                    <Form.Item
-                        label="Option 2"
-                        name="option_2"
-                        rules={[{ required: true, message: 'Please input your option 2!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-                    <Form.Item>
-                        <Button type="primary" htmlType="submit">
-                            Submit
-                        </Button>
-                    </Form.Item>
-                </Form>
-            )}
+        <div>
+            <SeoScore />
+            <Form form={form} onFinish={onFinish}>
+                <Form.Item name="option_1" label="Option 1">
+                    <Input />
+                </Form.Item>
+                <Form.Item name="option_2" label="Option 2">
+                    <Input />
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
         </div>
     );
 };
