@@ -33,6 +33,8 @@ class Peacock_SEO
         // Load features
         Peacock::getInstance();
 
+        $moduleManager = \Peacock\Core\ModuleManager::getInstance();
+
         // Add options page
         add_action('admin_menu', [$this, 'addOptionsPage']);
 
