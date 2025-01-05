@@ -46,4 +46,8 @@ class ModuleManager
     {
         return $this->modules;
     }
+
+    public function load() {
+        // load modules
+    }
 }
